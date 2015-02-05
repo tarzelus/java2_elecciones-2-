@@ -96,68 +96,8 @@ public class Eleccionest {
 
 
 		
-       	 	//********************************Herramientas para leer el fichero*********************
+       	 	// impresion de los habitatnes
 			Habitante.imprimir();
-/*
-			String nombrefichero2 = "censo.txt";	
-			String ruta2 ="/home/zubiri/Proyectosjava/java2_elecciones";
-			
-			
-			//lectura del fichero censo.txt	
-			File archivo2 = new File(ruta2, nombrefichero2);
-			FileReader leer2 = new FileReader (archivo2);
-			BufferedReader bf2 = new BufferedReader(leer2);
-			
-
- 			//creacion de arraylist para ir metiendo los datos del txt
-			ArrayList<Habitante> habitantes = new ArrayList<Habitante>();
-		
-			String salida2 = bf2.readLine();
-
-			do
-			{
-				// se le da valor a la variable de salida de tipo string de la linea que lee
-				
-				//Coje el valor de string que tiene la linea completa y lo divide en diferentes secciones
-				String [] cortarString = salida2.split(",");	
-			
-				//se le da valor a cada Atributo del objeto de tipo habitante
-				Habitante habi = new Habitante(); 
-				habi.setDni(cortarString[0]);
-				habi.setNombre(cortarString[1]);
-				habi.setApellido(cortarString[2]);
-				habi.setEdad(Integer.parseInt(cortarString[3]));
-				//si el habitante introducido es mayor de edad lo añadira al censo
-					if (Integer.parseInt(cortarString[3]) >= 18)
-					{
-
-						//Despues de darle valor a cada atributo del objeto de tipo habitante todos estos se le asignan
-						//   al objeto de arraylist de tipo habitante
-						habitantes.add(habi);
-					}
-			
-			
-			
-
-						
-
-			} while ((salida2 = bf2.readLine()) != null);
-			//la condicion del while es que seguira ejecutando siempre que tenga escrita la siguiente linea
-     
-
-     		System.out.println("Estos son los datos de los censados: ");
-
-			//imprimira la informacion del arraylist del objeto de habitantes
-			for(int t=0; t<habitantes.size(); t++)
-        	{
-         	   System.out.println("  --------------------------");
-            	System.out.println("  |  Dni "+habitantes.get(t).getDni() );
-           	 	System.out.println("  |  nombre:: "+habitantes.get(t).getNombre());
-            	System.out.println("  |  Apellido: "+ habitantes.get(t).getApellido());
-            	System.out.println("  |  Edad: "+ habitantes.get(t).getEdad());
-       		 }	
-			
-*/
 		}
 		break;
 
@@ -197,16 +137,7 @@ public class Eleccionest {
 
 
 			//Impresion del inmueble
-Inmueble.imprimir2();
-			/*
-			System.out.print("\n-------------Estos son los datos del inmueble------------------");	
-
-			System.out.println("\nLa direccion del inmueble: " + inmueble.getDireccion());
-			System.out.println("\nProvincia del inmueble : " + inmueble.getProvincia());
-			System.out.println("\nLocalidad del inmueble: " + inmueble.getLocalidad());
-			System.out.println("\nCódigo postal del inmueble: " + inmueble.getCod_postal());
-			System.out.println("\nFecha de construcción del inmueble: " + inmueble.getFecha_construc());
-*/
+			Inmueble.imprimir2();
 
 		}
 		break;
@@ -239,11 +170,7 @@ Inmueble.imprimir2();
 
 			//impresion de espacio publilco
 
-			System.out.print("\n-------------Estos son los datos del espacio publico------------------");	
-
-			System.out.println("\nEste es el tipo de espacio publico que es: " + espaciopublico.getTipo());
-			System.out.println("\nLocalidad del espacio publico: " + espaciopublico.getLocalidad());
-			System.out.println("\nLa direccion del espacio publico: " + espaciopublico.getDireccion());
+			EspacioPublico.imprimirEspacio();
 
 		
 		}
@@ -290,17 +217,9 @@ Inmueble.imprimir2();
 			censo = sc.nextInt();
 			ayuntamiento.setCenso(censo);
 
-			//impreion de los datos de ayuntamiento
+			//impreion de los datos de ayuntamiento mediante la clase de ayuntamiento
 
-			System.out.print("\n-------------Estos son los datos del Ayuntamiento------------------");	
-
-			System.out.println("\nLocalidad: " + ayuntamiento.getLocalidad());
-			System.out.println("\nAlcalde: " + ayuntamiento.getAlcalde());
-			System.out.println("\nGobierno: " + ayuntamiento.getGobierno());
-			System.out.println("\nCodigo postal: " + ayuntamiento.getCod_postal());
-			System.out.println("\nExtension de los terrenos: " + ayuntamiento.getExtension());
-			System.out.println("\nPopulacion:  " + ayuntamiento.getPopulacion());
-			System.out.println("\nGente censada: " + ayuntamiento.getCenso());
+			Ayuntamiento.imprimirAyuntamiento();
 
 
 		}
@@ -309,68 +228,8 @@ Inmueble.imprimir2();
 
 		case 'p':
 		{
-
-			//lectura del fichero listadosPartidos.txt y guardarlos en un arraylist para imprimirlos
-
-
-			System.out.print("\n----------------------------Lista de partidos-----------------------------------\n");
-	
-
-
-			String nombrefichero3 = "listadosPartidos.txt";
-			String ruta3 ="/home/zubiri/Proyectosjava/java2_elecciones";
-			ArrayList<Partido> partidos = new ArrayList<Partido>();
-
-
-			int i = 0;
-
-			
-			//lectura del fichero	
-			File archivo3 = new File(ruta3, nombrefichero3);
-			FileReader leer3 = new FileReader (archivo3);
-			BufferedReader bf3 = new BufferedReader(leer3);
-			String salida3 = bf3.readLine();
- 
-
-			
-
-
-			do
-			{
-				// se le da valor a la variable de salida de tipo string de la linea que lee
-				
-				//Coje el valor de string que tiene la linea completa y lo divide en diferentes secciones
-				String [] cortarString = salida3.split(",");	
-			
-				//se le da valor a cada tributo del partido
-				Partido part = new Partido(); 
-				part.setNombre(cortarString[0]);
-				part.setLider(cortarString[1]);
-				part.setIdeologia(cortarString[2]);
-				part.setCant_militantes(Integer.parseInt(cortarString[3]));
-				part.setPrevias_elecciones(Integer.parseInt(cortarString[4]));
-			
-				//el valor que se le ha dado a cada atributo se lo pasa al objeto de tipo arraylist de partido
-				partidos.add(part);
-
-						
-
-			} while ((salida3 = bf3.readLine()) != null);
-
-     
-			System.out.println("--estos son los partidos politicos que hay disponibles ");
-
-			for(int d=0; d<partidos.size(); d++)
-        	{
-            	System.out.println("  ---------------------------------\n");
-            		System.out.println(" nombre: "+partidos.get(d).getNombre() );
-            		System.out.println(" \nlider: "+partidos.get(d).getLider());
-            		System.out.println(" \nideologia: "+ partidos.get(d).getIdeologia());
-            		System.out.println(" \nCantidad de militantes: "+ partidos.get(d).getCant_militantes());
-            		System.out.println(" \nCantidad de militantes: "+ partidos.get(d).getPrevias_elecciones());
-        	}
-        	//vaciar el arraylist de tipo poartidos	
-			partidos.clear();
+			//impresion de partidos mediante la clase Partidos
+			Partido.imprimirPartido();
 
         }
         break;

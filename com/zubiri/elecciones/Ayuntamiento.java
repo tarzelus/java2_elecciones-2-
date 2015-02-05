@@ -7,19 +7,19 @@ public class Ayuntamiento {
 
 
 
-		private String Localidad;		
-		private String Alcalde;
-		private String Gobierno;	
-		private int Populacion;
-		private int Censo;
-		private String Cod_postal;
-		private double Extension;
+		private static String Localidad;		
+		private static String Alcalde;
+		private static String Gobierno;	
+		private static int Populacion;
+		private static int Censo;
+		private static String Cod_postal;
+		private static double Extension;
 
 		
 	
 		
 //--------------------localidad--------------------------------	
-		public String getLocalidad()
+		public static String getLocalidad()
 		{
 			return Localidad;
 		}
@@ -32,7 +32,7 @@ public class Ayuntamiento {
 
 //---------------------alcalde-------------------------------
 
-		public String getAlcalde()
+		public static String getAlcalde()
 		{
 			return Alcalde;
 		}
@@ -45,7 +45,7 @@ public class Ayuntamiento {
 
 //--------------------govierno--------------------------------
 
-		public String getGobierno()
+		public static String getGobierno()
 		{
 			return Gobierno;
 		}
@@ -59,7 +59,7 @@ public class Ayuntamiento {
 	
 //---------------------populacion-------------------------------
 
-		public int getPopulacion()
+		public static int getPopulacion()
 		{
 			return Populacion;
 		}
@@ -73,7 +73,7 @@ public class Ayuntamiento {
 
 //--------------------censo------------------------
 
-		public int getCenso()
+		public  static int getCenso()
 		{
 			return Censo;
 		}
@@ -86,7 +86,7 @@ public class Ayuntamiento {
 
 //--------------------extension------------------------
 
-		public double getExtension()
+		public  static double getExtension()
 		{
 			return Extension;
 		}
@@ -100,7 +100,7 @@ public class Ayuntamiento {
 
 //--------------------cod_postal ------------------------
 
-		public String getCod_postal()
+		public static String getCod_postal()
 		{
 			return Cod_postal;
 		}
@@ -110,7 +110,19 @@ public class Ayuntamiento {
 			Cod_postal=cod_postal1;
 		}
 
+		public static void imprimirAyuntamiento() {
+			System.out.print("\n-------------Estos son los datos del Ayuntamiento------------------");	
 
+			System.out.println("\nLocalidad: " + getLocalidad());
+			System.out.println("\nAlcalde: " + getAlcalde());
+			System.out.println("\nGobierno: " + getGobierno());
+			System.out.println("\nCodigo postal: " + getCod_postal());
+			System.out.println("\nExtension de los terrenos: " + getExtension());
+			System.out.println("\nPopulacion:  " + getPopulacion());
+			System.out.println("\nGente censada: " + getCenso());
 
-	
+		;
+			
+		}
+
 }

@@ -8,13 +8,13 @@ public class EspacioPublico {
 
 
 		
-		private String Direccion;
-		private String Tipo;
-		private String Localidad;
+		private static String Direccion;
+		private static String Tipo;
+		private static String Localidad;
 	
 		
 //--------------------direccion--------------------------------	
-		public String getDireccion()
+		public static String getDireccion()
 		{
 			return Direccion;
 		}
@@ -27,7 +27,7 @@ public class EspacioPublico {
 
 //--------------------tipo--------------------------------
 
-		public String getTipo()
+		public static String getTipo()
 		{
 			return Tipo;
 		}
@@ -40,7 +40,7 @@ public class EspacioPublico {
 
 //---------------------localidad-------------------------------
 
-		public String getLocalidad()
+		public static String getLocalidad()
 		{
 			return Localidad;
 		}
@@ -50,9 +50,17 @@ public class EspacioPublico {
 	 		Localidad = localidad1;
 		}
 
+		
+		public static void imprimirEspacio() {
+			System.out.print("\n-------------Estos son los datos del espacio publico------------------");	
+			System.out.println("\nEste es el tipo de espacio publico que es: " + getTipo());
+			System.out.println("\nLocalidad del espacio publico: " + getLocalidad());
+			System.out.println("\nLa direccion del espacio publico: " + getDireccion());
+			
+		}
+		
 
-
-
+		
 
 	
 
