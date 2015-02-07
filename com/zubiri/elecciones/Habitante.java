@@ -20,7 +20,7 @@ public class Habitante {
 		private String Apellido;
 		private int Edad;
 		
-//--------------------DNI--------------------------------	
+//--------------------DNI---------------------------------	
 		
 
 
@@ -100,70 +100,50 @@ public class Habitante {
 		
 //impresion de los habitantes---------------------------------------------------
 		
-		public static void imprimir() {
+		public static void imprimirHabitante() throws NumberFormatException, IOException {
 			String nombrefichero2 = "censo.txt";	
 			String ruta2 ="/home/zubiri/Proyectosjava/java2_elecciones";
 			
 			
 			//lectura del fichero censo.txt	
 			File archivo2 = new File(ruta2, nombrefichero2);
-			FileReader leer2=null;
-			try {
-				leer2 = new FileReader (archivo2);
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			FileReader leer2 = new FileReader (archivo2);
 			BufferedReader bf2 = new BufferedReader(leer2);
 			
 
  			//creacion de arraylist para ir metiendo los datos del txt
 			ArrayList<Habitante> habitantes = new ArrayList<Habitante>();
 		
-			String salida2 = null;
-			try {
-				salida2 = bf2.readLine();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			String salida2 = bf2.readLine();
 
-			try {
-				do
-				{
-					// se le da valor a la variable de salida de tipo string de la linea que lee
-					
-					//Coje el valor de string que tiene la linea completa y lo divide en diferentes secciones
-					String [] cortarString = salida2.split(",");	
+			do
+			{
+				// se le da valor a la variable de salida de tipo string de la linea que lee
 				
-					//se le da valor a cada Atributo del objeto de tipo habitante
-					Habitante habi = new Habitante(); 
-					habi.setDni(cortarString[0]);
-					habi.setNombre(cortarString[1]);
-					habi.setApellido(cortarString[2]);
-					habi.setEdad(Integer.parseInt(cortarString[3]));
-					//si el habitante introducido es mayor de edad lo añadira al censo
-						if (Integer.parseInt(cortarString[3]) >= 18)
-						{
+				//Coje el valor de string que tiene la linea completa y lo divide en diferentes secciones
+				String [] cortarString = salida2.split(",");	
+			
+				//se le da valor a cada Atributo del objeto de tipo habitante
+				Habitante habi = new Habitante(); 
+				habi.setDni(cortarString[0]);
+				habi.setNombre(cortarString[1]);
+				habi.setApellido(cortarString[2]);
+				habi.setEdad(Integer.parseInt(cortarString[3]));
+				//si el habitante introducido es mayor de edad lo añadira al censo
+					if (Integer.parseInt(cortarString[3]) >= 18)
+					{
 
-							//Despues de darle valor a cada atributo del objeto de tipo habitante todos estos se le asignan
-							//   al objeto de arraylist de tipo habitante
-							habitantes.add(habi);
-						}
-				
-				
-				
+						//Despues de darle valor a cada atributo del objeto de tipo habitante todos estos se le asignan
+						//   al objeto de arraylist de tipo habitante
+						habitantes.add(habi);
+					}
+			
+			
+			
 
-							
+						
 
-				} while ((salida2 = bf2.readLine()) != null);
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			} while ((salida2 = bf2.readLine()) != null);
 			//la condicion del while es que seguira ejecutando siempre que tenga escrita la siguiente linea
      
 

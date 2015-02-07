@@ -13,7 +13,7 @@ public class EspacioPublico {
 		private static String Localidad;
 	
 		
-//--------------------direccion--------------------------------	
+//--------------------direccion---------------------------------	
 		public static String getDireccion()
 		{
 			return Direccion;

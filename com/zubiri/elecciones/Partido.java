@@ -28,7 +28,7 @@ public class Partido {
 		private int Previas_elecciones;
 
 
-//--------------------nombre--------------------------------
+//--------------------nombre---------------------------------
 
 		public String getNombre()
 		{

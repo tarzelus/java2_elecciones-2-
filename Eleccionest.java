@@ -96,8 +96,8 @@ public class Eleccionest {
 
 
 		
-       	 	// impresion de los habitatnes
-			Habitante.imprimir();
+       	 // *****impresion de los habitatnes****
+			Habitante.imprimirHabitante();
 		}
 		break;
 
@@ -136,8 +136,8 @@ public class Eleccionest {
 			inmueble.setFecha_construc(fecha_construc);
 
 
-			//Impresion del inmueble
-			Inmueble.imprimir2();
+			//****Impresion del inmueble****
+			Inmueble.imprimirInmueble();
 
 		}
 		break;
@@ -168,7 +168,7 @@ public class Eleccionest {
 			direccione = sc.next();
 			espaciopublico.setDireccion(direccione);
 
-			//impresion de espacio publilco
+			//****impresion de espacio publilco*****
 
 			EspacioPublico.imprimirEspacio();
 

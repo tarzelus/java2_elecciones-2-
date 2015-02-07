@@ -18,7 +18,7 @@ public class Ayuntamiento {
 		
 	
 		
-//--------------------localidad--------------------------------	
+//--------------------localidad---------------------------------	
 		public static String getLocalidad()
 		{
 			return Localidad;

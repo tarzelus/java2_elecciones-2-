@@ -8,7 +8,7 @@ public class Inmueble {
 		private static int Cod_postal;
 		private static String Fecha_construc;
 		
-//--------------------direccion--------------------------------	
+//--------------------direccion---------------------------------	
 		public static String getDireccion()
 		{
 			return Direccion;
@@ -75,7 +75,7 @@ public class Inmueble {
 			Fecha_construc = fecha_construc1;
 		}
 
-		public static  void imprimir2() {
+		public static  void imprimirInmueble() {
 			System.out.print("\n-------------Estos son los datos del inmueble------------------");	
 
 			System.out.println("\nLa direccion del inmueble: " + getDireccion());
