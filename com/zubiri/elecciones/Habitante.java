@@ -1,8 +1,10 @@
 package com.zubiri.elecciones;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,10 +17,10 @@ import java.lang.*;
 public class Habitante {
 
 			
-		private String Dni;
-		private String Nombre;
-		private String Apellido;
-		private int Edad;
+		private static String Dni;
+		private static String Nombre;
+		private static String Apellido;
+		private static int Edad;
 		
 //--------------------DNI---------------------------------	
 		
@@ -31,7 +33,7 @@ public class Habitante {
 		
 		}
 		
-		public final void  setDni(String DNI1)
+		public final static void  setDni(String DNI1)
 		{
 			Dni=DNI1;
 		}
@@ -65,7 +67,7 @@ public class Habitante {
 			
 		}
 		
-		public void  setNombre(String nombre1)
+		public static void  setNombre(String nombre1)
 		{
 			Nombre=nombre1;
 		}
@@ -79,7 +81,7 @@ public class Habitante {
 			return Apellido;
 		}
 		
-		public void  setApellido(String apellido1)
+		public static void  setApellido(String apellido1)
 		{
 			Apellido=apellido1;
 		}
@@ -93,10 +95,82 @@ public class Habitante {
 			return Edad;
 		}
 		
-		public void  setEdad(int edad1)
+		public static void  setEdad(int edad1)
 		{
 			Edad=edad1;
 		}
+		
+
+		
+//escritura de habitantes*******************************************************
+		static String DNI;
+		static String nombre;
+		static String apellido;
+		static String denuevo;
+		static int edad;
+
+		//System.out.print("\n-------------introduce los datos del habitante------------------");	
+
+		//*******************herramientas para escribir en el fichero****************************
+		public static void escribirHabitante() throws IOException{
+			Scanner sc = new Scanner(System.in);
+
+		try 
+		{
+			
+			String ruta = "/home/zubiri/Proyectosjava/java2_elecciones/censo.txt";
+
+			FileWriter fw = new FileWriter(ruta , true);
+			BufferedWriter bw = new BufferedWriter(fw);
+	
+		
+
+
+	
+
+			//pregunta por primera vez para escribir el nombre del habitante y pregunta para agregar un nombre mas a la lista
+			do{
+	
+			//comprueba que el DNI inglresado tiene el numero de caracteres que tiene que tener un DNI		
+				do{
+					System.out.print("\ningresa el numero del DNI con letra (8 numeros y 1 letra): ");
+					DNI = sc.next();
+					setDni(DNI);
+				} while (DNI.length() >9 || DNI.length() < 9);
+		
+				bw.write(DNI + ",");
+
+				System.out.print("\ningresa el Nombre del habitante: ");
+				nombre = sc.next();
+				setNombre(nombre);
+				bw.write(nombre + ",");
+		
+				System.out.print("\ningresa el apellido del hahbitante: ");
+				apellido = sc.next();
+				setApellido(apellido);
+				bw.write(apellido + ",");
+
+				System.out.print("\ningresa la edad del habitante: ");
+				edad = sc.nextInt();
+				setEdad(edad);
+				bw.write(edad + "\n");
+
+				
+				System.out.print("\nquieres insertar otro habitante? (si/no)");
+				denuevo = sc.next();
+	
+
+			}while (denuevo.equalsIgnoreCase("si"));
+			bw.close();
+	
+
+		
+    		}
+		catch (FileNotFoundException e) 
+		{
+       			 System.out.println(e.getMessage());
+   	 	}
+}
 		
 //impresion de los habitantes---------------------------------------------------
 		

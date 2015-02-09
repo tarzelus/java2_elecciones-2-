@@ -2,7 +2,7 @@ package com.zubiri.elecciones;
 import java.util.Scanner;
 
 
-public class EspacioPublico {
+public abstract class EspacioPublico {
 
 
 
@@ -19,7 +19,7 @@ public class EspacioPublico {
 			return Direccion;
 		}
 		
-		public void  setDireccion(String direccion1)
+		public static void  setDireccion(String direccion1)
 		{
 			Direccion = direccion1;
 		}
@@ -32,7 +32,7 @@ public class EspacioPublico {
 			return Tipo;
 		}
 		
-		public void  setTipo(String tipo1)
+		public static void  setTipo(String tipo1)
 		{
 			Tipo=tipo1;
 		}
@@ -45,11 +45,33 @@ public class EspacioPublico {
 			return Localidad;
 		}
 		
-		public void  setLocalidad(String localidad1)
+		public static void  setLocalidad(String localidad1)
 		{
 	 		Localidad = localidad1;
 		}
 
+		
+		public static void escribirEspacio(){
+			String direccione, tipo, localidade;
+
+			Scanner sc = new Scanner(System.in);
+
+					
+			System.out.print("\n-------------Espacio publico------------------");
+
+			System.out.print("\ningresa el tipo de espacio publico ");
+			tipo = sc.next();
+			setTipo(tipo);
+
+	
+			System.out.print("\ningresa la localidad del espacio publico: ");
+			localidade = sc.next();
+			setLocalidad(localidade);	
+	
+			System.out.print("\ningresa la direccion del espacio publico ");
+			direccione = sc.next();
+			setDireccion(direccione);
+		}
 		
 		public static void imprimirEspacio() {
 			System.out.print("\n-------------Estos son los datos del espacio publico------------------");	
